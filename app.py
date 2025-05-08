@@ -403,7 +403,7 @@ def handle_media_upload():
 #         photo_list = list(photos.find({}, {'_id': 0}))
 #         return jsonify(photo_list)
 #     except Exception as e:
-#         return jsonify({"error": str(e)}), 500
+#         return jsonify({"error": str(e)}), 50
 
 
 @app.route('/media-items', methods=['GET'])
