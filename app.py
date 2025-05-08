@@ -104,7 +104,7 @@ def create_authentication_token(user_identifier, user_name, user_role):
         "user_id": user_identifier,
         "username": user_name,
         "role": user_role,
-        "expiry": datetime.utcnow() + timedelta(hours=24)
+        "expiry": int(datetime.utcnow().timestamp())
     }
     print(SECRET_KEY,'This is secret')
     return jwt.encode(token_payload, SECRET_KEY, algorithm="HS256")
