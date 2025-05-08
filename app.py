@@ -30,6 +30,7 @@ users = db['users']  # For storing users
 
 SECRET_KEY = os.getenv("SECRET_KEY")
 
+
 # def parse_json(data):
 #     return json.loads(json_util.dumps(data))
 
@@ -105,6 +106,7 @@ def create_authentication_token(user_identifier, user_name, user_role):
         "role": user_role,
         "expiry": datetime.utcnow() + timedelta(hours=24)
     }
+    print(SECRET_KEY,'This is secret')
     return jwt.encode(token_payload, SECRET_KEY, algorithm="HS256")
 
 
