@@ -70,7 +70,7 @@ def store_media_in_azure_storage(file_data, target_filename):
         if connection_string is None:
             raise EnvironmentError("Azure Blob Storage connection string not configured")
         
-        storage_container = "photo-container"
+        storage_container = "photos"
         blob_client_instance = BlobServiceClient.from_connection_string(connection_string)
         container_reference = blob_client_instance.get_container_client(storage_container)
         blob_reference = container_reference.get_blob_client(target_filename)
